@@ -23,7 +23,7 @@ app.use(cookieParser());
 Routes(app);
 
 //connect to DataBase
-const url = process.env.CONNECTION_STRING || "mongodb://localhost:27017";
+const url = process.env.MONGO_URL || "mongodb://localhost:27017";
 await mongoose.connect(url)
     .then(() => {
         console.log("Connected to Database.")
