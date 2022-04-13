@@ -1,7 +1,9 @@
-import {usersRouter} from "./users.js";
 import path from "path";
 import {fileURLToPath} from "url";
 import express from "express";
+import {cabinRouter} from "./cabinRouter.js";
+import {eventRouter} from "./eventRouter.js";
+import {ratingRouter} from "./ratingRouter.js";
 
 export default function Routes(app){
 
@@ -11,8 +13,12 @@ export default function Routes(app){
     //Initialize Static Files
     app.use(express.static(path.join(__dirname, '../client/build')));
 
-    //Direct to Users API
-    app.use('/users', usersRouter);
+    app.use('/api/cabin', cabinRouter);
+
+    app.use('/api/event', eventRouter);
+
+    app.use('/api/rating', ratingRouter);
+
 
     //Allow React to Control Other URLs
     app.get('*', (req, res) => {
