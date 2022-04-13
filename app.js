@@ -23,15 +23,15 @@ app.use(cookieParser());
 Routes(app);
 
 //connect to DataBase
-const url = process.env.MONGO_URL || "mongodb://localhost:27017";
-// await mongoose.connect(url)
-//     .then(() => {
-//         console.log("Connected to Database.")
-//     })
-//     .catch(err => {
-//         console.log("DB Connection Error: ", err.message);
-//         process.exit(1);
-//     });
+//const url = process.env.MONGO_URL || "mongodb://localhost:27017";
+await mongoose.connect(process.env.MONGO_URL)
+    .then(() => {
+        console.log("Connected to Database.")
+    })
+    .catch(err => {
+        console.log("DB Connection Error: ", err.message);
+        process.exit(1);
+    });
 
 
 const port = process.env.PORT || '3001';
