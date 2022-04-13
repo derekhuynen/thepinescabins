@@ -2,8 +2,8 @@ import path from "path";
 import {fileURLToPath} from "url";
 import express from "express";
 import {cabinRouter} from "./cabinRouter.js";
-// import {eventRouter} from "./eventRouter.js";
-// import {ratingRouter} from "./ratingRouter.js";
+import {eventRouter} from "./eventRouter.js";
+import {ratingRouter} from "./ratingRouter.js";
 const router = express.Router();
 
 export default function Routes(app){
@@ -18,10 +18,10 @@ export default function Routes(app){
     });
 
     app.use('/api/cabin', cabinRouter);
-    //
-    // app.use('/api/event', eventRouter);
-    //
-    // app.use('/api/rating', ratingRouter);
+
+    app.use('/api/event', eventRouter);
+
+    app.use('/api/rating', ratingRouter);
 
 
 
