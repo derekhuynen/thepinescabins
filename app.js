@@ -5,6 +5,7 @@ import Routes from "./routes/routes.js";
 import "dotenv/config";
 import bodyParser from "body-parser";
 import mongoose from "mongoose";
+import cors from 'cors'
 
 
 //Create Express App
@@ -18,6 +19,7 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
+app.use(cors());
 
 //Set Routes
 Routes(app);

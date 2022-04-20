@@ -1,0 +1,27 @@
+.sliderShow-container{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.sliderShow-arrow{
+    height: 100px;
+    position: absolute;
+    font-size: 30px;
+    text-align: center;
+    line-height: 100px;
+    top: calc(50% - 50px);
+    cursor: pointer;
+    border-radius: 10px;
+    color: white;
+}
+
+.imgArrow:hover {
+    transform: scale(1.15);
+}
+
+.sliderShow-container > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
